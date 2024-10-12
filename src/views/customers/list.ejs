@@ -1,0 +1,33 @@
+<h1>Customers</h1>
+<a href="<%= allRoutes.customers.BASE_API %><%= allRoutes.customers.CREATE %>">Create User</a>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <!-- <th>CreatedAt</th>
+      <th>UpdatedAt</th> -->
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% customers.forEach(customer => { %>
+      <tr>
+        <td><%= customer.id %></td>
+        <td><%= customer.name %></td>
+        <td><%= customer.email %></td>
+        <td><%= customer.phone %></td>
+        <!-- <td><%= customer.createdAt %></td> -->
+        <!-- <td><%= customer.updatedAt %></td> -->
+        <td>
+          <a href="<%= allRoutes.customers.BASE_API %><%= allRoutes.customers.EDIT_BY_ID.replace(':id', customer.id) %>">Edit</a>
+          <form action="<%= allRoutes.customers.BASE_API %><%= allRoutes.customers.DELETE_BY_ID.replace(':id', customer.id) %>" method="POST" style="display:inline;">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

@@ -1,0 +1,11 @@
+<h1>Create Customer</h1>
+<form action="<%= allRoutes.customers.BASE_API %><%= allRoutes.customers.CREATE %>" method="POST">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+  <label for="phone">Phone:</label>
+  <input id="phone" name="phone" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" maxlength="10">   
+  <button type="submit">Create</button>
+</form>
+<a href="<%= allRoutes.customers.BASE_API %><%= allRoutes.customers.GET_ALL %>">Back to Customers List</a>
